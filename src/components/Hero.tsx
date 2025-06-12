@@ -1,11 +1,13 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface HeroProps {
   mode: 'tour' | 'rent';
 }
 
 const Hero: React.FC<HeroProps> = ({ mode }) => {
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
   const tourContent = {
     background: 'https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?auto=format&fit=crop&w=1920&q=80',
     headline: 'Guided Safari Tours',
@@ -24,6 +26,16 @@ const Hero: React.FC<HeroProps> = ({ mode }) => {
 
   const content = mode === 'tour' ? tourContent : rentContent;
 
+  // Handle fade transition when mode changes
+  useEffect(() => {
+    setIsTransitioning(true);
+    const timer = setTimeout(() => {
+      setIsTransitioning(false);
+    }, 150);
+
+    return () => clearTimeout(timer);
+  }, [mode]);
+
   const scrollToProducts = () => {
     const element = document.getElementById('products');
     if (element) {
@@ -34,7 +46,7 @@ const Hero: React.FC<HeroProps> = ({ mode }) => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 transition-all duration-1000 ease-out">
+      <div className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
         <img
           src={content.background}
           alt={content.headline}
@@ -44,7 +56,7 @@ const Hero: React.FC<HeroProps> = ({ mode }) => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto animate-fade-in">
+      <div className={`relative z-10 text-center text-white px-4 max-w-4xl mx-auto transition-opacity duration-500 ease-in-out ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
           {content.headline}
         </h1>
