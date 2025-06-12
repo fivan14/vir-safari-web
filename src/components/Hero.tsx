@@ -7,7 +7,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ mode }) => {
   const tourContent = {
-    background: 'https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?auto=format&fit=crop&w=1920&q=80',
+    background: '../src/components/images/polaris_buggy.jpg',
     headline: 'Guided Safari Tours',
     subheadline: "Discover Vir's hidden gems in 1 hour",
     description: 'Join our experienced guides for an unforgettable adventure through the most beautiful and secret spots of Vir Island.',
@@ -15,7 +15,7 @@ const Hero: React.FC<HeroProps> = ({ mode }) => {
   };
 
   const rentContent = {
-    background: 'https://images.unsplash.com/photo-1569385689138-5fa7cdeb2b49?auto=format&fit=crop&w=1920&q=80',
+    background: '../src/components/images/buggy_red_stones.jpg',
     headline: 'Rent & Ride Free',
     subheadline: 'Quads, buggies, scooters & more',
     description: 'Explore Vir Island at your own pace with our premium fleet of vehicles. Perfect for adventure seekers and families.',

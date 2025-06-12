@@ -1,4 +1,6 @@
 
+
+
 [
   {
     "id": "quad_cf520",
@@ -8,7 +10,7 @@
     "deposit": 100,
     "prices": { "1h": 60, "2h": 90, "3h": 120 },
     "happyHour1h": 45,
-    "img": "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?auto=format&fit=crop&w=800&q=80",
+    "img": "/images/cfmoto.jpg",
     "features": ["2-seater", "Manual transmission", "Perfect for trails", "Helmet included"]
   },
   {
@@ -19,7 +21,7 @@
     "deposit": 200,
     "prices": { "1h": 95, "2h": 160, "3h": 250 },
     "happyHour1h": 75,
-    "img": "https://images.unsplash.com/photo-1569385689138-5fa7cdeb2b49?auto=format&fit=crop&w=800&q=80",
+    "img": "/images/buggydesert.jpg",
     "features": ["4-seater", "Roll cage", "Automatic", "Perfect for families"]
   },
   {
@@ -29,7 +31,7 @@
     "seats": 2,
     "deposit": 100,
     "prices": { "1h": 25, "24h": 60 },
-    "img": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80",
+    "img": "/images/piaggio_liberty_23_.jpg",
     "features": ["2-seater", "Fuel efficient", "Easy to drive", "City exploration"]
   },
   {

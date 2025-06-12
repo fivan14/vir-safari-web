@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import logoImage from '../components/images/alphaquads-logo.png';
 
 interface HeaderProps {
   onModeChange: (mode: 'tour' | 'rent') => void;
@@ -36,11 +37,13 @@ const Header: React.FC<HeaderProps> = ({ onModeChange, currentMode }) => {
       }`}
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        {/* Logo */}
+        
         <div className="flex items-center space-x-2">
-          <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center">
-            <span className="text-white font-bold text-lg">AQ</span>
-          </div>
+          {/* <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center">
+            <span className="text-white font-bold text-lg">AQ</span> */}
+           
+          {/* </div> */}
+           <img src={logoImage} alt="Alpha Quads Logo" className="w-12 h-auto" />
           <div>
             <h1 className="text-xl font-bold text-gray-900">Alpha Quads</h1>
             <p className="text-xs text-gray-600">Vir Island</p>
