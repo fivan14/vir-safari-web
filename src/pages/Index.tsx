@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import ProductSlider from '../components/ProductSlider';
@@ -11,15 +11,6 @@ import ChatbotWidget from '../components/ChatbotWidget';
 
 const Index = () => {
   const [mode, setMode] = useState<'tour' | 'rent'>('tour');
-
-  // Auto-switch hero mode every 5 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setMode(prevMode => prevMode === 'tour' ? 'rent' : 'tour');
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <div className="min-h-screen">
