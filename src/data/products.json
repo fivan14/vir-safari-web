@@ -1,0 +1,62 @@
+
+[
+  {
+    "id": "quad_cf520",
+    "name": "Quad CF Moto 520 L",
+    "type": "quad",
+    "seats": 2,
+    "deposit": 100,
+    "prices": { "1h": 60, "2h": 90, "3h": 120 },
+    "happyHour1h": 45,
+    "img": "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?auto=format&fit=crop&w=800&q=80",
+    "features": ["2-seater", "Manual transmission", "Perfect for trails", "Helmet included"]
+  },
+  {
+    "id": "buggy_xp",
+    "name": "Buggy Polaris XP",
+    "type": "buggy",
+    "seats": 4,
+    "deposit": 200,
+    "prices": { "1h": 95, "2h": 160, "3h": 250 },
+    "happyHour1h": 75,
+    "img": "https://images.unsplash.com/photo-1569385689138-5fa7cdeb2b49?auto=format&fit=crop&w=800&q=80",
+    "features": ["4-seater", "Roll cage", "Automatic", "Perfect for families"]
+  },
+  {
+    "id": "scooter_50cc",
+    "name": "Skuter 50 cc",
+    "type": "scooter",
+    "seats": 2,
+    "deposit": 100,
+    "prices": { "1h": 25, "24h": 60 },
+    "img": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80",
+    "features": ["2-seater", "Fuel efficient", "Easy to drive", "City exploration"]
+  },
+  {
+    "id": "escooter",
+    "name": "Električni romobil",
+    "type": "e-scooter",
+    "seats": 1,
+    "deposit": 40,
+    "prices": { "1h": 20, "2h": 25, "24h": 35 },
+    "img": "https://images.unsplash.com/photo-1571068316344-75bc76f77890?auto=format&fit=crop&w=800&q=80",
+    "features": ["Electric", "Eco-friendly", "Quick rides", "Urban mobility"]
+  },
+  {
+    "id": "safari_tour",
+    "name": "Guided Safari Tour",
+    "type": "tour",
+    "seats": 8,
+    "deposit": 0,
+    "prices": { "1h": 35 },
+    "img": "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?auto=format&fit=crop&w=800&q=80",
+    "features": ["Professional guide", "Hidden gems", "1-hour adventure", "Small groups only"],
+    "itinerary": [
+      "Departure from Alpha Quads base",
+      "Vir's secret viewpoints",
+      "Historical landmarks",
+      "Photo stops at best locations",
+      "Return via scenic route"
+    ]
+  }
+]
