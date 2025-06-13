@@ -39,9 +39,13 @@ const SafariTourSection: React.FC<SafariTourSectionProps> = ({
                 <img
                   src={product.img}
                   alt={product.name}
-                  className="w-full h-64 md:h-80 object-cover"
+                  className="w-full h-full object-cover"
                 />
+
+                {/* Gradient overlay from left to right */}
+                <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/5" />
               </div>
+
               <div className="md:w-1/2 p-8 flex flex-col justify-center">
                 <h4 className="text-2xl font-bold text-gray-900 mb-4">
                   {product.name}

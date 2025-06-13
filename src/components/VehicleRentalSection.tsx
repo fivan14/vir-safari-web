@@ -57,6 +57,7 @@ const VehicleRentalSection: React.FC<VehicleRentalSectionProps> = ({
                         Happy Hour!
                       </div>
                     )}
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-black/5" />
                   </div>
 
                   <div className="p-6">
