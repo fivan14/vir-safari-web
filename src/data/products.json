@@ -10,7 +10,7 @@
     "deposit": 100,
     "prices": { "1h": 60, "2h": 90, "3h": 120 },
     "happyHour1h": 45,
-    "img": "/images/cfmoto.jpg",
+    "img": "/images/cfmoto-quad.jpg",
     "features": ["2-seater", "Manual transmission", "Perfect for trails", "Helmet included"]
   },
   {
@@ -50,8 +50,8 @@
     "type": "tour",
     "seats": 8,
     "deposit": 0,
-    "prices": { "1h": 35 },
-    "img": "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?auto=format&fit=crop&w=800&q=80",
+    "prices": { "1h": 60 },
+    "img": "/images/safari-tour.jpg",
     "features": ["Professional guide", "Hidden gems", "1-hour adventure", "Small groups only"],
     "itinerary": [
       "Departure from Alpha Quads base",
