@@ -43,6 +43,32 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ mode }) => {
     return basePrice;
   };
 
+  const handleProductNavigation = (direction: 'prev' | 'next') => {
+    if (!selectedProduct || selectedProduct.type === 'tour') return;
+    
+    const currentIndex = rentalProducts.findIndex(p => p.id === selectedProduct.id);
+    let newIndex;
+    
+    if (direction === 'prev') {
+      newIndex = currentIndex > 0 ? currentIndex - 1 : rentalProducts.length - 1;
+    } else {
+      newIndex = currentIndex < rentalProducts.length - 1 ? currentIndex + 1 : 0;
+    }
+    
+    setSelectedProduct(rentalProducts[newIndex]);
+  };
+
+  const getNavigationState = () => {
+    if (!selectedProduct || selectedProduct.type === 'tour') {
+      return { canNavigatePrev: false, canNavigateNext: false };
+    }
+    
+    return {
+      canNavigatePrev: rentalProducts.length > 1,
+      canNavigateNext: rentalProducts.length > 1
+    };
+  };
+
   return (
     <section id="products" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -245,6 +271,8 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ mode }) => {
         <ProductModal
           product={selectedProduct}
           onClose={() => setSelectedProduct(null)}
+          onNavigate={handleProductNavigation}
+          {...getNavigationState()}
         />
       )}
     </section>

@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { X, Users, Euro, Clock, MapPin, Star } from 'lucide-react';
+import { X, Users, Euro, Clock, MapPin, Star, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface Product {
   id: string;
@@ -18,9 +17,18 @@ interface Product {
 interface ProductModalProps {
   product: Product;
   onClose: () => void;
+  onNavigate?: (direction: 'prev' | 'next') => void;
+  canNavigatePrev?: boolean;
+  canNavigateNext?: boolean;
 }
 
-const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
+const ProductModal: React.FC<ProductModalProps> = ({ 
+  product, 
+  onClose, 
+  onNavigate,
+  canNavigatePrev = false,
+  canNavigateNext = false
+}) => {
   const isHappyHour = () => {
     const now = new Date();
     const hour = now.getHours();
@@ -33,9 +41,33 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
     return `${key} hour${parseInt(key) > 1 ? 's' : ''}`;
   };
 
+  const showNavigationButtons = product.type !== 'tour' && onNavigate;
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-      <div className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto animate-scale-in">
+      <div className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto animate-scale-in relative">
+        {/* Navigation Buttons */}
+        {showNavigationButtons && (
+          <>
+            {canNavigatePrev && (
+              <button
+                onClick={() => onNavigate('prev')}
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-primary-500 hover:bg-primary-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-105"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+            )}
+            {canNavigateNext && (
+              <button
+                onClick={() => onNavigate('next')}
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-primary-500 hover:bg-primary-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-105"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            )}
+          </>
+        )}
+
         {/* Header */}
         <div className="relative">
           <img
