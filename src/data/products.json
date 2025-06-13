@@ -41,7 +41,7 @@
     "seats": 1,
     "deposit": 40,
     "prices": { "1h": 20, "2h": 25, "24h": 35 },
-    "img": "https://images.unsplash.com/photo-1571068316344-75bc76f77890?auto=format&fit=crop&w=800&q=80",
+    "img": "/images/el-romobil.png",
     "features": ["Electric", "Eco-friendly", "Quick rides", "Urban mobility"]
   },
   {

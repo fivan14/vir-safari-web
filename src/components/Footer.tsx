@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { MapPin, Phone, Mail } from 'lucide-react';
-
+import logoImage from '../components/images/alphaquads-logo.png'; // Adjust the path as necessary
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-900 text-white py-12">
