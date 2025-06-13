@@ -31,9 +31,9 @@ const SafariTourSection: React.FC<SafariTourSectionProps> = ({
   return (
     <div className="mb-16">
       <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Safari Adventures</h3>
-      <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {products.map((product) => (
-          <div key={product.id} className="bg-white rounded-3xl shadow-xl overflow-hidden">
+          <div key={product.id} className="bg-white rounded-3xl shadow-xl overflow-hidden w-full">
             <div className="md:flex">
               <div className="md:w-1/2 relative">
                 <img
