@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { X, Users, Euro, Clock, MapPin, Star, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -42,10 +43,13 @@ const ProductModal: React.FC<ProductModalProps> = ({
   };
 
   const showNavigationButtons = product.type !== 'tour' && onNavigate;
+  const isSafariTour = product.type === 'tour';
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-      <div className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto animate-scale-in relative">
+      <div className={`bg-white rounded-3xl shadow-2xl w-full max-h-[90vh] overflow-y-auto animate-scale-in relative ${
+        isSafariTour ? 'max-w-6xl' : 'max-w-4xl'
+      }`}>
         {/* Navigation Buttons */}
         {showNavigationButtons && (
           <>
@@ -73,7 +77,9 @@ const ProductModal: React.FC<ProductModalProps> = ({
           <img
             src={product.img}
             alt={product.name}
-            className="w-full h-64 lg:h-80 object-cover rounded-t-3xl"
+            className={`w-full object-cover rounded-t-3xl ${
+              isSafariTour ? 'h-80 lg:h-96' : 'h-64 lg:h-80'
+            }`}
           />
           <button
             onClick={onClose}
@@ -113,14 +119,14 @@ const ProductModal: React.FC<ProductModalProps> = ({
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className={`grid gap-8 ${isSafariTour ? 'lg:grid-cols-3' : 'lg:grid-cols-2'}`}>
             {/* Left Column - Features and Specs */}
-            <div>
+            <div className={isSafariTour ? 'lg:col-span-2' : ''}>
               {/* Features */}
               {product.features && (
                 <div className="mb-8">
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">Features</h3>
-                  <div className="grid grid-cols-1 gap-3">
+                  <div className={`grid gap-3 ${isSafariTour ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1'}`}>
                     {product.features.map((feature, index) => (
                       <div key={index} className="flex items-center">
                         <div className="w-2 h-2 bg-primary-500 rounded-full mr-3" />
@@ -168,6 +174,7 @@ const ProductModal: React.FC<ProductModalProps> = ({
                       </span>
                       <span className="text-2xl font-bold text-gray-900">
                         €{price}
+                        {isSafariTour && <span className="text-sm text-gray-600 ml-1">/person</span>}
                       </span>
                     </div>
                   ))}
