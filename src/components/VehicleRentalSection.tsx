@@ -42,7 +42,7 @@ const VehicleRentalSection: React.FC<VehicleRentalSectionProps> = ({
           }}
           className="w-full"
         >
-          <CarouselContent className="-ml-2 md:-ml-4">
+          <CarouselContent className="-ml-2 md:-ml-4 pb-[30px]">
             {products.map((product) => (
               <CarouselItem key={product.id} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
                 <div className="bg-white rounded-3xl shadow-xl overflow-hidden h-full">

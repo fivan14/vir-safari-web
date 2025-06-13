@@ -2,6 +2,17 @@
 
 
 [
+    {
+    "id": "buggy_xp",
+    "name": "Buggy Polaris XP",
+    "type": "buggy",
+    "seats": 4,
+    "deposit": 200,
+    "prices": { "1h": 95, "2h": 160, "3h": 250 },
+    "happyHour1h": 75,
+    "img": "/images/buggydesert.jpg",
+    "features": ["4-seater", "Roll cage", "Automatic", "Perfect for families"]
+  },
   {
     "id": "quad_cf520",
     "name": "Quad CF Moto 520 L",
@@ -12,17 +23,6 @@
     "happyHour1h": 45,
     "img": "/images/cfmoto-quad.jpg",
     "features": ["2-seater", "Manual transmission", "Perfect for trails", "Helmet included"]
-  },
-  {
-    "id": "buggy_xp",
-    "name": "Buggy Polaris XP",
-    "type": "buggy",
-    "seats": 4,
-    "deposit": 200,
-    "prices": { "1h": 95, "2h": 160, "3h": 250 },
-    "happyHour1h": 75,
-    "img": "/images/buggydesert.jpg",
-    "features": ["4-seater", "Roll cage", "Automatic", "Perfect for families"]
   },
   {
     "id": "scooter_50cc",
