@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: "/vir-safari-web/", // <-- OVO DODAJ (npr. /alpha-quads/)
+ base: mode === "production" ? "/safari-vir-web/" : "/", // <-- OVO DODAJ (npr. /alpha-quads/)
   server: {
     host: "::",
     port: 8080,
